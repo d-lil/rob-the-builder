@@ -9,6 +9,6 @@ const auth = require('./utils/auth')
 const sequelize = require('./connection'); 
 
 const app = express(); 
-const PORT = process.env.PORT || 3306; 
+const PORT = process.env.PORT || 3001; 
 
 

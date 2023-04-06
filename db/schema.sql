@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS --fill with our db name--_db;
-CREATE DATABASE --fill with our db name--_db;
+DROP DATABASE IF EXISTS constructo_db;
+CREATE DATABASE constructo_db;

@@ -17,7 +17,7 @@
     <h3>Create a New Project:</h3>
 
     <form class="form new-project-form">
-      {{!-- We need to be able to iterate through available dates with the google api --}}
+      {{!-- We need to be able to iterate through available dates with the google api, idk if we need this anymore if the api is emailing them--}}
       <div class="form-group">
         <label for="project-date">Estimate date:</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
@@ -28,6 +28,7 @@
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
       <div class="form-group">
+        {{!-- this button will take them to the calendly widget on the homepage?--}}
         <button type="submit" class="btn btn-primary">Schedule new estimate</button>
       </div>
     </form>

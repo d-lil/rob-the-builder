@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const { User } = require('../../models');
 
-const adminEmails = ['dahneel@gmail.com', 'scott.schulman84@gmail.com', 'matt email', 'saniyya.mcclendon@gmail.com']
+const adminEmails = ['dahneel@gmail.com', 'scott.schulman84@gmail.com', 'mattmoore2014@gmail.com', 'saniyya.mcclendon@gmail.com']
 
 const requireAdmin = (req, res, next) => {
     if (req.user && adminEmails.includes(req.user.email)) {

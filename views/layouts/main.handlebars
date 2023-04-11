@@ -4,25 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <title>Let's Build</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg" style="background-image:url(assets/mainbg.jpg)">
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="tools">🛠</span>
-        <a href="/">Welcome to Backend Boyz Construction!</a>
+        <span role="img" aria-label="tools">🛠</span><strong>Backend Boyz Construction</strong>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/profile">profile</a> | 
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/">Home</a> | 
+        <a href="/login">Login</a> | 
+        <a href="/reviews">Reviews</a>
         {{/if}}
       </nav>
     </header>

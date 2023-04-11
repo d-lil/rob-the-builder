@@ -23,6 +23,13 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/reviews', async (req, res) => {
+  try {
+   res.render('reviews');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/project/:id', async (req, res) => {
   try {

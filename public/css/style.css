@@ -55,7 +55,6 @@ a:hover {
     opacity: 70%;
 }
 
-
 .blu {
   width: 85%;
   text-align: center;
@@ -101,7 +100,7 @@ button:hover{
 button:hover:after {
   opacity: 1;
   right: 10px;
-=======
+}
 @media (min-width: 1200px) {
   h1, .h1 {
     font-size: 2.5rem;
@@ -159,3 +158,4 @@ h4, .h4 {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
+}

@@ -21,11 +21,10 @@ const loginFormHandler = async (event) => {
  
  const signupFormHandler = async (event) => {
    event.preventDefault();
- 
    const name = document.querySelector('#name-signup').value.trim();
    const email = document.querySelector('#email-signup').value.trim();
    const password = document.querySelector('#password-signup').value.trim();
- 
+   console.log(name,email,password)
    if (name && email && password) {
      const response = await fetch('/api/users', {
        method: 'POST',
@@ -49,19 +48,3 @@ const loginFormHandler = async (event) => {
    .querySelector('.signup-form')
    .addEventListener('submit', signupFormHandler);
  
-
-// const express = require('express');
-// const app = express();
-
-// app.get('/login',(req, res) => {
-//    res.render('login');
-// });
-
-// app.post('/login', (req, res) => {
-//    const { email, password } = req.body;
-//    if (email === 'email' && password === 'password') {
-//    res.redirect('/getquote');
-//    } else {
-//    res.render('login', { error: 'Invalid email or password' });
-//    }
-// });

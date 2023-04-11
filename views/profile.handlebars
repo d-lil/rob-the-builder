@@ -6,13 +6,9 @@
   </div>
 </div>
 {{!-- Show upcoming projects (not functional) --}}
-<div>
-    <h3>Your upcoming projects</h3>
-    <p>{{name.project.date}}</p>
-    <p>{{project.id.description}}</p>
-</div>
+
 {{!-- Create a new project. --}}
-<div class="row mt-4" style="background-image:url(assets/blue.jpg)">
+<div class="row mt-4 blu" style="background-image:url(assets/blue.jpg)">
   <div class="col-md-6">
     <h3>Create a New Project:</h3>
 
@@ -20,21 +16,31 @@
       {{!-- We need to be able to iterate through available dates with the google api, idk if we need this anymore if the api is emailing them--}}
       <div class="form-group">
         <label for="project-date">Estimate date:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <input class="form-input" type="date" id="estimate-date" name="estimate-date" />
       </div>
       <div class="form-group">
         {{!-- Enter the new project description for the work to be estimated. --}}
-    <label for="project-desc">project description:</label>
+        <label for="project-desc">project description:</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
       <div class="form-group">
+        {{!-- Enter the new project description for the work to be estimated. --}}
+        <label for="project-desc">location(city):</label>
+        <textarea class="form-input" id="project-location" name="project-location"></textarea>
+      </div>
+      <div class="form-group wrapper">
         {{!-- this button will take them to the calendly widget on the homepage?--}}
-        <button type="submit" class="btn btn-primary">Schedule new estimate</button>
+        <button type="submit" class="btn btn-primary">Schedule New Estimate</button>
       </div>
     </form>
   </div>
-
-  
+</div>
+<div>
+<div>
+    <h3>Your upcoming projects</h3>
+    <p>{{name.project.date}}</p>
+    <p>{{project.id.description}}</p>
+</div>
   {{#if projects.length}}
   <div class="col-md-6 project-list">
     <h3>Current Projects:</h3>
@@ -44,7 +50,7 @@
       <div class="col-md-8">
         <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 wrapper">
         <button class="btn btn-sm btn-danger" data-id="{{project.id}}">CANCEL</button>
       </div>
     </div>

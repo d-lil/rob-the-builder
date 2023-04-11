@@ -23,18 +23,16 @@ User.init(
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
       validate: {
         isEmail: true
       },
-      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
-      validate: {
-        len: [8],
-        msg: "Must be at least 8 characters" 
-      }
-    }
+      allowNull: false,
+    },
   },
   {
     hooks: {

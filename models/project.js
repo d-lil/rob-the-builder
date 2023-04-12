@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Project extends Model {}
-// do we want project_type to be a list of choices??
+
 Project.init(
   {
     id: {

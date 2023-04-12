@@ -2,36 +2,43 @@
     {
         "name": "brit",
         "email": "hitmebaby@onemoretime.com",
-        "password": "toxxxic1"
+        "password": "toxxxic1",
+        "admin": false
     },
     {
         "name": "lester",
         "email": "bunnyboy@gummo.com",
-        "password": "glizzy666izzy"
+        "password": "glizzy666izzy",
+        "admin": false
     },
     {
         "name": "jeff",
         "email": "iamnormal@genericguy.com",
-        "password": "verynormalpassword01"
+        "password": "verynormalpassword01",
+        "admin": false
     },
     {
         "name": "saniyya",
         "email": "saniyya.mcclendon@gmail.com",
-        "password": "saniyya"
+        "password": "saniyya",
+        "admin": true
     },
     {
         "name": "matt",
         "email": "mattmoore2014@gmail.com",
-        "password": "matt"
+        "password": "matt",
+        "admin": true
     },
     {
         "name": "scott",
         "email": "scott.schulman84@gmail.com",
-        "password": "scott"
+        "password": "scott",
+        "admin":true
     },
     {
         "name": "danny",
         "email": "dahneel@gmail.com",
-        "password": "danny"
+        "password": "danny",
+        "admin": true
     }
 ]

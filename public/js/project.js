@@ -1,2 +1,17 @@
-// DO WE EVEN NEED THIS FILE IDK LOL 
-// MAYBE NOT ????? MAYBE SO ???? WHEN WE HAVE A BOSS MAN AUTHORIZED USER
+const cancelButtons = document.querySelectorAll('.btn-danger');
+
+cancelButtons.forEach((button) => {
+  button.addEventListener('click', async (event) => {
+    const projectId = event.target.getAttribute('data-id');
+
+    try {
+        const response = await fetch(`/api/project/${projectId}`, {
+        method: 'DELETE',
+      });
+
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  });
+});

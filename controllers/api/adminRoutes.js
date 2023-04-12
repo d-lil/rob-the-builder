@@ -12,7 +12,7 @@ const requireAdmin = (req, res, next) => {
     }
   };
 
-router.get('/admin', requireAdmin, async (req, res) => {
+router.get('/project', requireAdmin, async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -20,7 +20,7 @@ router.get('/admin', requireAdmin, async (req, res) => {
     });
     const users = userData.map((user) => user.get({ plain: true }));
 
-    res.render('admin', {
+    res.render('project', {
       users,
       logged_in: true,
     });
@@ -28,3 +28,5 @@ router.get('/admin', requireAdmin, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+module.exports = router;

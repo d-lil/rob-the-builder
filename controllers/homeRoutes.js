@@ -4,18 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const projects = projectData.map((project) => project.get({ plain: true }));
     res.render('homepage', { 
-      projects, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -26,6 +15,28 @@ router.get('/', async (req, res) => {
 router.get('/reviews', async (req, res) => {
   try {
    res.render('reviews');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/project/', async (req, res) => {
+  try {
+    const projectData = await Project.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const projects = projectData.map((project) => project.get({ plain: true }));
+
+    res.render('project', {
+      projects,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }

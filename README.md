@@ -11,3 +11,7 @@ https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSCmcLLSG5egTYLlNzCRHqwMmGl
 https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRWfM1x9BrbRSMEFs5XJls1yEcoylBaq7wQEuNjEB9Fa2OjLknQ
 https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT3UF5HfItV2FmLF0Sjb7fMNS26s9fbmFRCU2PpPcm4RuSq2-TQ
 https://m.ftt11.com/media/image/upload/6683639fea3dcba8b22/t-shirt/white/cry-now-sob-later-legalize-anabolic-steroids-legalize-anabolic-steroids-f.jpeg
+
+https://www.westend61.de/images/0000701603pw/construction-worker-and-executive-shaking-hands-in-construction-site-ZEF007899.jpg
+https://cdn.statcdn.com/Infographic/images/normal/27405.jpeg
+https://genius.com/Bob-the-builder-can-we-fix-it-lyrics

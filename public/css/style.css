@@ -11,6 +11,10 @@ h1 {
     -webkit-text-fill-color: transparent;
   }
 
+h2 {
+  font-size: 70px;
+}
+
 .bg {
     height: 100%;
     height: 100vh;
@@ -101,6 +105,89 @@ button:hover:after {
   opacity: 1;
   right: 10px;
 }
+
+.homeDiv {
+  background-color: aliceblue;
+  opacity: 80%;
+}
+
+.homeDiv2 {
+  background-color: aliceblue;
+  width: 100vw;
+}
+
+.image {
+  position: relative;
+}
+
+.image figcaption {
+  position: absolute;
+  top: 77%;
+  bottom: 23%;
+  left: 80%;
+  font-size: 42px;
+  color: #043857;
+}
+
+.book {
+  min-height: 150px;
+  text-align: center;
+  justify-content: center;
+  justify-self: center;
+  margin: auto;
+}
+
+#book a{
+  position: relative;
+  }
+
+#book a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 2em;
+  background: url("/assets/lol.png");
+   z-index: 1;
+  background-size: 100%;
+  min-height: 200px;
+    background-position: center;
+  background-repeat: no-repeat;
+    transition: all .5s ease;
+}
+
+#book a:hover:before {
+    opacity: 1;
+  }
+
+.flex {
+ display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.left {
+  margin-left: 5%;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.right {
+  background-color: aliceblue;
+  opacity: 80%;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.blockquote {
+  font-size: smaller;
+}
+
 @media (min-width: 1200px) {
   h1, .h1 {
     font-size: 2.5rem;

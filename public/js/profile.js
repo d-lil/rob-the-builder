@@ -1,6 +1,7 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
+  // **ERROR** Uncaught (in promise) TypeError: Cannot read properties of null (reading 'value')
   const project_type = document.querySelector('#type').value; // we can add a trim on this, but if we make it a checkbox or dropdown input then we don't need it
   const location = document.querySelector('#location').value.trim();
   // do we add the cost into the form?
@@ -44,5 +45,6 @@ document
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 document
   .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // ***ERROR***  Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+  .addEventListener('submit', delButtonHandler);
+

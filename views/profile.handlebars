@@ -24,13 +24,14 @@
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
       <div class="form-group">
-        {{!-- Enter the new project description for the work to be estimated. --}}
+        {{!-- Enter the location for the work to be estimated. --}}
         <label for="project-desc">location(city):</label>
         <textarea class="form-input" id="project-location" name="project-location"></textarea>
       </div>
       <div class="form-group wrapper">
         {{!-- this button will take them to the calendly widget on the homepage?--}}
-        <button type="submit" class="btn btn-primary">Schedule New Estimate</button>
+        {{!-- Clicking the button should save the new estimate - scott --}}
+        <button type="submit" class="btn btn-primary" data-id="{{project.id}}">Schedule New Estimate</button>
       </div>
     </form>
   </div>
@@ -38,8 +39,7 @@
 <div>
 <div>
     <h3>Your upcoming projects</h3>
-    <p>{{name.project.date}}</p>
-    <p>{{project.id.description}}</p>
+    <p><a href="/project/{{project.id}}">{{project.description}}</a></p>
 </div>
   {{#if projects.length}}
   <div class="col-md-6 project-list">
@@ -51,7 +51,7 @@
         <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
       </div>
       <div class="col-md-4 wrapper">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">CANCEL</button>
+        <button type="submit" class="btn btn-sm btn-danger" data-id="{{project.id}}">CANCEL</button>
       </div>
     </div>
     {{/each}}

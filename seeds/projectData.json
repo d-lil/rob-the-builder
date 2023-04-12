@@ -1,23 +1,27 @@
 [
     {
+        "id": 1,
         "project_type": "pool",
         "location": "manitou springs",
         "cost": 50000,
         "user_id": 1
     },
     {
+        "id": 2,
         "project_type": "driveway",
         "location": "aurora",
         "cost": 10000,
         "user_id": 3
     },
     {
+        "id": 3,
         "project_type": "kitchen",
         "location": "ur moms",
         "cost": 69666,
         "user_id": 2
     },
     {
+        "id": 4,
         "project_type": "guest house",
         "location": "aspen",
         "cost": null,

@@ -15,12 +15,16 @@
         <input class="form-input" type="text" id="location" name="location" placeholder="City Name"/>
       </div>
       <div class="form-group">
-        <label for="cost">Cost:</label>
+        <label for="cost">Cost (if any) do not use any special characters or commas:</label>
         <input class="form-input" type="text" id="cost" name="cost"/>
       </div>
       <div class="form-group">
         <label for="date_created">Date Project Request Created:</label>
         <input class="form-input" type="date" id="date_created" name="date_created"/>
+      </div>
+      <div class="form-group">
+        <label for="user_id">User ID:</label>
+        <input class="form-input" type="text" id="user_id" name="user_id" placeholder="Please enter integer as user's id">
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Post</button>
@@ -29,7 +33,7 @@
   </div>
 </div>
 
-<div>
+<div class="project-list">
     {{#each projects as |project|}}
     <div class="row mb-2">
       <div class="col-md-8">

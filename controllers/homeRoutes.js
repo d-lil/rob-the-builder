@@ -20,7 +20,7 @@ router.get('/reviews', async (req, res) => {
   }
 });
 
-router.get('/project/', async (req, res) => {
+router.get('/project', async (req, res) => {
   try {
     const projectData = await Project.findAll({
       include: [
@@ -55,7 +55,7 @@ router.get('/project/:id', async (req, res) => {
 
     const project = projectData.get({ plain: true });
 
-    res.render('project', {
+    res.render('projectz', {
       ...project,
       logged_in: req.session.logged_in
     });

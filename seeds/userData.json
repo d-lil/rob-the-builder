@@ -13,5 +13,25 @@
         "name": "jeff",
         "email": "iamnormal@genericguy.com",
         "password": "verynormalpassword01"
+    },
+    {
+        "name": "saniyya",
+        "email": "saniyya.mcclendon@gmail.com",
+        "password": "saniyya"
+    },
+    {
+        "name": "matt",
+        "email": "mattmoore2014@gmail.com",
+        "password": "matt"
+    },
+    {
+        "name": "scott",
+        "email": "scott.schulman84@gmail.com",
+        "password": "scott"
+    },
+    {
+        "name": "danny",
+        "email": "dahneel@gmail.com",
+        "password": "danny"
     }
 ]

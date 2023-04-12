@@ -45,6 +45,6 @@ document
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 document
   .querySelector('.project-list')
-  // **ERROR**  Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+  // ***ERROR***  Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
   .addEventListener('submit', delButtonHandler);
 

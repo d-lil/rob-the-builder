@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//route for creating new user
 router.post('/', async (req, res) => {
   try {
+    //if successful user info will be saved in session
     const userData = await User.create(req.body);
 
     req.session.save(() => {
@@ -16,8 +18,10 @@ router.post('/', async (req, res) => {
   }
 });
 
+//route to login
 router.post('/login', async (req, res) => {
   try {
+    //check if email is in db
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
@@ -27,6 +31,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    //check if password is in db
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -36,7 +41,8 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    req.session.save(() => {
+    //save user data in current session
+      req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       req.session.is_admin = userData.admin;
@@ -48,6 +54,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//route to handle logout and session deletion 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

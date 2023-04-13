@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Project extends Model {}
-
+//project model
 Project.init(
   {
     id: {
@@ -38,7 +38,7 @@ Project.init(
   },
   {
     sequelize,
-    timestamps: false, //possibly could want this as true
+    timestamps: false, 
     freezeTableName: true,
     underscored: true,
     modelName: 'project',

@@ -1,10 +1,10 @@
+//handle form submission for creating new project
 const newFormHandler = async (event) => {
   event.preventDefault();
 
- 
-  const project_type = document.querySelector('#type').value; // we can add a trim on this, but if we make it a checkbox or dropdown input then we don't need it
+ //gets project type and location from form 
+  const project_type = document.querySelector('#type').value;
   const location = document.querySelector('#location').value.trim();
-  // do we add the cost into the form?
   if (project_type && location) {
     const response = await fetch('/api/project', {
       method: 'POST',
@@ -21,7 +21,7 @@ const newFormHandler = async (event) => {
     }
   }
 };
-
+//handles the click event on the delete project button
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -29,7 +29,7 @@ const delButtonHandler = async (event) => {
     const response = await fetch(`/api/project/${id}`, {
       method: 'DELETE',
     });
-
+//redirect to profile 
     if (response.ok) {
       document.location.replace('/profile');
     } else {
@@ -37,14 +37,12 @@ const delButtonHandler = async (event) => {
     }
   }
 };
-// may need to change these query selectors depending on Scott's hbrs
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 document
   .querySelector('.project-list')
-  // ***ERROR***  Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
   .addEventListener('submit', delButtonHandler);
 

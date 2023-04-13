@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const { User } = require('../../models');
 
+//require admin status for access 
 const requireAdmin = (req, res, next) => {
       console.log("require admin")
       console.log(req.session)
@@ -11,7 +12,7 @@ const requireAdmin = (req, res, next) => {
       res.status(403).send('Access denied');
     }
   };
-
+//route to admin data
 router.get('/project', requireAdmin, async (req, res) => {
   try {
     const userData = await User.findAll({

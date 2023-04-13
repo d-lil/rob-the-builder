@@ -2,6 +2,17 @@ const router = require('express').Router();
 const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+
+const requireAdmin = (req, res, next) => {
+      console.log("require admin")
+      console.log(req.session)
+      if (req.session.is_admin) {
+      next();
+    } else {
+      res.status(403).send('Access denied');
+    }
+  };
+
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', { 
@@ -20,7 +31,7 @@ router.get('/reviews', async (req, res) => {
   }
 });
 
-router.get('/project', async (req, res) => {
+router.get('/project', requireAdmin, async (req, res) => {
   try {
     const projectData = await Project.findAll({
       include: [

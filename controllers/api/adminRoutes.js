@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const { User } = require('../../models');
 
-const adminEmails = ['dahneel@gmail.com', 'scott.schulman84@gmail.com', 'mattmoore2014@gmail.com', 'saniyya.mcclendon@gmail.com']
-
 const requireAdmin = (req, res, next) => {
-    if (req.user && adminEmails.includes(req.user.email)) {
+      console.log("require admin")
+      console.log(req.session)
+      if (req.session.is_admin) {
       next();
     } else {
       res.status(403).send('Access denied');
@@ -28,5 +28,7 @@ router.get('/project', requireAdmin, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
 
 module.exports = router;

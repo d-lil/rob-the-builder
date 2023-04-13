@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+      req.session.is_admin = userData.admin;
       res.json({ user: userData, message: 'IN LIKE SIN, BABY!' });
     });
 

@@ -4,7 +4,7 @@ const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/projectz/${id}`, {
+      const response = await fetch(`/api/project/${id}`, {
         method: 'DELETE',
       });
   
@@ -43,6 +43,21 @@ const newFormHandler = async (event) => {
     }
   };
 
+  const cancelButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/projectz/${this.id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/project');
+      } else {
+        alert('Could not delete project');
+      }
+    }
+  };
 
 //event listener/query selector for submit button
 document
@@ -52,3 +67,7 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+document
+  .querySelector('.projectz-delete')
+  .addEventListener('click', cancelButtonHandler);

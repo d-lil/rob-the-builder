@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+//function to require admin auth
 const requireAdmin = (req, res, next) => {
       console.log("require admin")
       console.log(req.session)
@@ -13,6 +13,7 @@ const requireAdmin = (req, res, next) => {
     }
   };
 
+  //when logged in taken to homepage
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', { 
@@ -23,6 +24,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//route to reviews view
 router.get('/reviews', async (req, res) => {
   try {
    res.render('reviews');
@@ -31,6 +33,7 @@ router.get('/reviews', async (req, res) => {
   }
 });
 
+//route for admin to access all project data
 router.get('/project', requireAdmin, async (req, res) => {
   try {
     const projectData = await Project.findAll({
@@ -53,6 +56,7 @@ router.get('/project', requireAdmin, async (req, res) => {
   }
 });
 
+//route for indiidual project view
 router.get('/project/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -75,6 +79,7 @@ router.get('/project/:id', async (req, res) => {
   }
 });
 
+//route for individual profile view
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {

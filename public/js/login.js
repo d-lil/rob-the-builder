@@ -1,16 +1,17 @@
+//handler for login form subission
 const loginFormHandler = async (event) => {
    event.preventDefault();
- 
+    //get email and password from the login form 
    const email = document.querySelector('#email-login').value.trim();
    const password = document.querySelector('#password-login').value.trim();
- 
+ //with email and password send POST request to login route
    if (email && password) {
      const response = await fetch('/api/users/login', {
        method: 'POST',
        body: JSON.stringify({ email, password }),
        headers: { 'Content-Type': 'application/json' },
      });
- 
+ //redirect to profile page
      if (response.ok) {
        document.location.replace('/profile');
      } else {
@@ -18,15 +19,18 @@ const loginFormHandler = async (event) => {
      }
    }
  };
- 
+ //handler for signup form submission 
  const signupFormHandler = async (event) => {
    event.preventDefault();
+   //get name, email, and password from signup form 
    const name = document.querySelector('#name-signup').value.trim();
    const email = document.querySelector('#email-signup').value.trim();
    const password = document.querySelector('#password-signup').value.trim();
    console.log(name,email,password)
    if (name && email && password) {
-     const response = await fetch('/api/users', {
+   
+    //with name, email, and paassword send POST request to users route 
+    const response = await fetch('/api/users', {
        method: 'POST',
        body: JSON.stringify({ name, email, password }),
        headers: { 'Content-Type': 'application/json' },
@@ -39,7 +43,7 @@ const loginFormHandler = async (event) => {
      }
    }
  };
- 
+ //event listeners for login and signup page 
  document
    .querySelector('.login-form')
    .addEventListener('submit', loginFormHandler);
